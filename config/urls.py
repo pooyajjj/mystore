@@ -21,5 +21,4 @@ urlpatterns = [
     path('accounts/', include('accounts.urls', namespace='accounts')),
     path('', include('home.urls', namespace='home')),
     path('products/', include('products.urls', namespace='products')),
-    path(r'api/auth/', include('knox.urls'))
 ]
