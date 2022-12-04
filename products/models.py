@@ -1,5 +1,5 @@
 from django.db import models
-
+from accounts.models import User
 
 
 class Products(models.Model):
@@ -16,3 +16,10 @@ class Products(models.Model):
 
     def __str__(self):
         return f'{self.name} - {self.stack}'
+
+
+class Order(models.Model):
+    user_id = models.ForeignKey(User, on_delete= models.CASCADE, related_name='buyer')
+    products_id = models.ForeignKey(Products, on_delete= models.CASCADE, related_name='buy product')
+    full_price = models.ForeignKey(Products, on_delete= models.CASCADE , related_name='full price')
+    

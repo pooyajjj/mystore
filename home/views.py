@@ -4,9 +4,10 @@ from accounts.models import User
 from .serializers import UserDetailSerializers
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
 
 class Home(APIView):
-    permission_classes = [IsAuthenticated,]
+    permission_classes = (IsAuthenticated,) 
 
     def get(self, request):
         user = User.objects.all()

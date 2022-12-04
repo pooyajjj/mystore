@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from .models import User
-
+from django.utils.text import gettext_lazy as _
+from rest_framework import serializers
+from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -20,5 +22,4 @@ class RegisterSerializer(serializers.ModelSerializer):
         user = User.objects.create_user(validated_data['username'], validated_data['email'], validated_data['password'])
 
         return user
-
 
