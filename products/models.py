@@ -20,6 +20,6 @@ class Products(models.Model):
 
 class Order(models.Model):
     user_id = models.ForeignKey(User, on_delete= models.CASCADE, related_name='buyer')
-    products_id = models.ForeignKey(Products, on_delete= models.CASCADE, related_name='buy product')
-    full_price = models.ForeignKey(Products, on_delete= models.CASCADE , related_name='full price')
+    products_id = models.ForeignKey(Products, on_delete= models.CASCADE, related_name='buy_product')
+    full_price = models.ForeignKey(Products, on_delete= models.CASCADE , related_name='full_price')
     
